@@ -1,6 +1,6 @@
 # P4-Ansible
 
-Makes P4 modular by support for merging two P4 programs. New code to be merged is written in P4++ descrebed in the doc below.
+Makes P4 modular by support for merging two P4 programs. New code to be merged is written in P4++ described in the doc below.
 
 https://github.com/hesingh/mnkcg/blob/master/p4-code-reuse/ansible.md
 
