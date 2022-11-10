@@ -70,6 +70,7 @@ p4-ansible>
 In another terminal, invoke server
 
 -d is dataplane version, 1.0 is for v1model P4 programs and 2.0 is for Tofino switching asic P4 programs.
+
 -v is a string for path to vendor.p4 file.
 
 If d is 2.0, use -s for BF SDE version used to compile P4 program.
