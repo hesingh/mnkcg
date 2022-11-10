@@ -1,4 +1,4 @@
-The tool merges two P4 programs. See 
+The tool merges two P4 programs. New code to be merged is written in P4++ described in the doc below.
 
 https://github.com/hesingh/mnkcg/blob/master/p4-code-reuse/ansible.md
 
