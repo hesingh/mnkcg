@@ -5,8 +5,6 @@
   auto-completion of commands and also up-arrow to cmds 
   used in the past.
 
-Before use, edit server.py for hardcoded paths, e.g., /home/hemant to your paths.
-
 ## Install dependencies
 
   use "pip install tftpy"
