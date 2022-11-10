@@ -7,15 +7,16 @@
 
 ## Install dependencies
 
-  use "pip install tftpy"
+  use `pip install tftpy`
   
-  use "pip install rpyc"
+  use `pip install rpyc`
 
 ## Run shell
   python client.py
 
   Example use:
 
+```
   hemant@ubuntu:~/interactive-shell$ python client.py 
 
 Welcome: MNK Labs P4-Ansible. Type ? to list commands
@@ -29,18 +30,20 @@ Documented commands (type help <topic>):
 EOF           exit            getNewFirmware  getSparseP4Prog  queryVersions
 
 compilePatch  getControlFull  getParserState  help           
+```
 
 ### Command to merge two P4 programs. 
 
 The vendor.p4 program must exist in the same directory as customer.p4 program. The merged program is dumped to console.
 
-p4-ansible> compilePatch /home/hemant/mnkcg-mex/v2_examples/new-ethtype/customer.p4
+`p4-ansible> compilePatch /home/hemant/mnkcg-mex/v2_examples/new-ethtype/customer.p4`
 
 
 ## More example use with Client and Server
 
 In one terminal invoke client.
 
+```
 $ python client.py
 
 Welcome: MNK Labs P4-Ansible. Type ? to list commands
@@ -62,17 +65,21 @@ p4-ansible> getParserState parse_ethernet
 p4-ansible> getSparseP4Prog
 
 p4-ansible>
+```
 
 In another terminal, invoke server
 
-# -d is dataplane version, 1.0 is for v1model P4 programs and 2.0 is for Tofino switching asic P4 programs.
+-d is dataplane version, 1.0 is for v1model P4 programs and 2.0 is for Tofino switching asic P4 programs.
+-v is a string for path to vendor.p4 file.
 
 If d is 2.0, use -s for BF SDE version used to compile P4 program.
 
-$ python server.py -d 2.0 -s 8.9.0
+```
+$ python server.py -d 2.0 -s 8.9.0 -v "/home/hemant/mnkcg/merge-examples/ipv6-merge"
 
 getControlFull(vendor_ingress)
 
 getParserState(parse_ethernet)
 
 getSparseP4Prog
+```
