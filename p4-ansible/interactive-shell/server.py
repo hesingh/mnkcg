@@ -110,7 +110,7 @@ if __name__ == "__main__":
     if args.dpver == None and args.sdever == None:
         print "Please provide args: -d <dp_ver> -s <sde_ver> -v <vendor path>"
         exit(2)
-    if args.vpath == None:
+    if args.dpver == '2.0' and args.vpath == None:
         print "Please provide vendor path: -v <vendor path>"
         exit(2)
 
