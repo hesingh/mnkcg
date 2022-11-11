@@ -119,7 +119,7 @@ parser base_parser {
 }
 ```
 
-## Override for Tables and Actions
+## Override for Tables and Actions (not supported yet)
 
 ```p4
 // Augmenting action parameter and action body is supported. Defaults to adding
@@ -143,7 +143,7 @@ default_action override = action_x;  // tells compiler to use this action as def
 }
 ```
 
-## Misc
+## Misc (Only `control override` is supported, rest is not supported yet)
 ```p4
 control foo(…) override {
     action moo(…) override {
