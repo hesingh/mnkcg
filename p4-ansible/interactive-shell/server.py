@@ -65,8 +65,10 @@ class MyService(rpyc.Service):
                 res = st.communicate()
 #               TODO: Compile res[0] with BF SDE and return final success/failure
                 if res[1] == '':
+                    file = open('merged.p4', 'w')
+                    file.write(res[0])
+                    file.close()
                     return res[0]
-#                    return '0'
                 else:
                      return res[1]
             if list[0] == "getSparseP4Prog":
