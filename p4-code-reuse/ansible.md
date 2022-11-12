@@ -182,3 +182,7 @@ table moo override {
     default_action override = action_x;  // tells compiler to use this action as default_action.
 }
 ```
+# P4 Contructs Supported for Override
+
+Struct, Header, Enum, Serialized Enum, Parser, Parser State, Control, and Package.
+
