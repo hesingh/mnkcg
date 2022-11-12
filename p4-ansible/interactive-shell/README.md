@@ -34,7 +34,7 @@ compilePatch  getControlFull  getParserState  help
 
 ### Command to merge two P4 programs. 
 
-The vendor.p4 program must exist in the same directory as customer.p4 program. The merged program is dumped to console.
+The `vendor.p4` program must exist in the same directory as `customer.p4` program. The merged program is dumped to console and to a file `merged.p4` in the same directory where `client.py` was invoked from.
 
 `p4-ansible> compilePatch /home/hemant/mnkcg-mex/v2_examples/new-ethtype/customer.p4`
 
