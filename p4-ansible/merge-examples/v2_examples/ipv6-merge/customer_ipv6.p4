@@ -3,11 +3,8 @@
 //
 #include "vendor_copy.p4"
 
-const bit<8> PROTO_UDP = 17;
-const bit<8> PROTO_ICMP6 = 58;
-
-parser customer_parser(packet_in packet, out headers_t hdr, inout meta_t meta,
-                       inout standard_metadata_t standard_metadata) {
+parser vendor_parser(packet_in packet, out headers_t hdr, inout meta_t meta,
+                     inout standard_metadata_t standard_metadata) override {
     state ipv6 {
         packet.extract(hdr.ipv6);
         transition select(hdr.ipv6.nextHdr) {
@@ -16,13 +13,14 @@ parser customer_parser(packet_in packet, out headers_t hdr, inout meta_t meta,
             default: accept;
         }
     }
-    state icmp6 {
-        packet.extract(hdr.icmp6);
-        transition accept;
-    }
-    state parse_udp {
-        packet.extract(hdr.udp);
-        transition accept;
+    state parse_ethernet override {
+        extract(hdr.ethernet);
+        transition select(hdr.ethernet.ethertype) {
+            IPV6: parse_ipv6_state;
+            // no need to extract, only switch based
+            // on already extracted header
+            default: super.parse_ethernet.transition;
+        }
     }
 
 }
