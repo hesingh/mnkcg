@@ -49,4 +49,9 @@ struct headers_t {
     ipv4_t     ipv4;
 }
 
+header_union U {
+  ethernet_t h0;
+  ipv4_t     h1;
+}
+
 #endif

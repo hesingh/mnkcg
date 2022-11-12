@@ -16,6 +16,10 @@ enum bit<8> Rate override {
     Fast = 3
 }
 
+header_union U override {
+   udp_t  h2;
+}
+
 parser vendor_parser(packet_in packet, out headers_t hdr, inout meta_t meta,
                      inout standard_metadata_t standard_metadata) override {
 
