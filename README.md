@@ -4,7 +4,7 @@ Makes P4 modular by support for merging two P4 programs. New code to be merged i
 
 https://github.com/hesingh/mnkcg/blob/master/p4-code-reuse/ansible.md
 
-Details are included in this video starting around 38:49. 
+Details are also included in this video starting around 38:49. 
 
 https://vod.video.cornell.edu/media/P4+Language+Design+Working+Group+-+Brainstorming/1_l8z9d16x
 
