@@ -190,5 +190,5 @@ Struct, Header, Header Union, Enum, Serialized Enum, Parser, Parser State, Contr
 
 1. Deparser - the two new keywords cannot support merging deparsers which require a specific oder of headers to emit. So, if merging deparsers is required, write code to merge manually and override the base code deparser.
 
-2. Only add code if the code overrides base funtionality. For examplem, if no changes are made to base parser, do not add any parser code.
+2. Only add code if the code overrides base funtionality. For example, if no changes are made to base parser, do not add any parser code.
  
