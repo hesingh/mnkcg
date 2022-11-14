@@ -155,7 +155,7 @@ control foo(…) override {
         super.apply(); // call apply method from the base code.
         // more new code
     }
-}
+}@
 ```
 
 # P4 Constructs Supported for Override
@@ -167,4 +167,16 @@ Struct, Header, Header Union, Enum, Serialized Enum, Parser, Parser State, Contr
 1. Deparser - the two new keywords cannot support merging deparsers which require a specific oder of headers to emit. So, if merging deparsers is required, write code to merge manually and override the base code deparser.
 
 2. Only add code if the code overrides base funtionality. For example, if no changes are made to base parser, do not add any parser code.
- 
+
+3. The tool tackled the hardest problem first – it was to merge P4 parsers. The tool does not support fine-grained merging of P4 Control elements 
+   such as table key, table list of actions, and action. However, the design to merge such elements is complete and published in the this doc. 
+   Until fine grained P4 Control is supported, we support overriding of base control causing new control replacing base control.  In summary 
+   P4 merging is supported for the whole P4 Program with some manual merge operations when writing new code in P4++. 
+   
+# Appendix
+
+Usually, a Tofino with 12 stages, is using all stages in a production switch. However, the Tofino2 has 20 stages and then the tool can merge new P4 
+code with Tofino code and run the merged code on Tofino2.  The paid version can remove/add specific functionality. Tofino merge examples are provided 
+in the paid version of the tool.
+
+Thereafter, a software implementation of P4, e.g., P4toVPP or P4toDPDK, is even better for use of the tool.
