@@ -155,7 +155,7 @@ control foo(…) override {
         super.apply(); // call apply method from the base code.
         // more new code
     }
-}@
+}
 ```
 
 # P4 Constructs Supported for Override
@@ -174,6 +174,8 @@ Struct, Header, Header Union, Enum, Serialized Enum, Parser, Parser State, Contr
    P4 merging is supported for the whole P4 Program with some manual merge operations when writing new code in P4++. 
    
 # Appendix
+
+## Use Cases
 
 Usually, a Tofino with 12 stages, is using all stages in a production switch. However, the Tofino2 has 20 stages and then the tool can merge new P4 
 code with Tofino code and run the merged code on Tofino2.  The paid version can remove/add specific functionality. Tofino merge examples are provided 
